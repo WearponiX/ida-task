@@ -1,0 +1,50 @@
+.header {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: min-content;
+  gap: 1rem;
+}
+
+.header__heading {
+  display: flex;
+  color: $text-black;
+  font-weight: 600;
+  font-size: 1.75rem;
+  line-height: 2rem;
+}
+
+.header__select-wrapper {
+  position: relative;
+  display: flex;
+  width: min-content;
+  margin: 0 0 0 auto;
+
+  &::after {
+    content: '';
+    display: flex;
+    width: 0.25rem;
+    height: 0.25rem;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    border-bottom: 1px solid $text-gray;
+    border-right: 1px solid $text-gray;
+    transform: rotate(45deg);
+  }
+}
+
+.header__select {
+  display: flex;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background-color: $bg-white;
+  color: $text-gray;
+
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  appearance: none;
+}

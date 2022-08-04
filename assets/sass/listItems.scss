@@ -1,0 +1,7 @@
+.list-items {
+  display: flex;
+  flex-flow: row wrap;
+  flex-grow: 1;
+  width: min-content;
+  gap: 1rem;
+}

@@ -1,0 +1,122 @@
+.add-item {
+  @include white-round-shadow-block;
+  display: flex;
+  flex-flow: column;
+  min-width: max-content;
+  width: 400px;
+  padding: 24px;
+
+  position: sticky;
+  top: 16px;
+}
+
+.add-item-flip {
+  transition: 1s;
+  transform: rotateY(360deg);
+}
+
+.add-item__field {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  margin: 16px 0 0;
+}
+
+.add-item__field--name .add-item__field-caption::after,
+.add-item__field--link .add-item__field-caption::after,
+.add-item__field--price .add-item__field-caption::after {
+  content: '';
+  display: flex;
+  background-color: $red;
+  position: relative;
+  top: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.add-item__field-caption {
+  display: flex;
+  color: $text-light-black;
+  font-weight: 400;
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+}
+
+.add-item__field-input {
+  display: flex;
+  margin: 4px 0 0;
+  border: none;
+  outline: 1px solid transparent;
+  padding: 10px 16px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    outline: 1px solid $blue;
+  }
+
+  transition: ease 0.5s;
+}
+
+.add-item__field-input--error {
+  outline: 1px solid $red;
+}
+
+.add-item__field-input--description {
+  resize: none;
+}
+
+.add-item__error {
+  display: flex;
+  margin: 4px 0 0;
+  font-weight: 400;
+  font-size: 0.5rem;
+  line-height: 0.625rem;
+  color: $red;
+}
+
+.add-item__submit {
+  @include flex-center;
+  margin: 34px 0 0;
+  padding: 10px 0;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  color: $white;
+  background: $green;
+
+  &:hover,
+  &:focus {
+    background-color: lighten($green, 5);
+    box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.25);
+  }
+
+  &:active {
+    background-color: darken($green, 5);
+    box-shadow: inset 0 0.125rem 0.375rem rgba(0, 0, 0, 0.25);
+  }
+
+  transition: ease 0.5s;
+}
+
+.add-item__submit--locked,
+.add-item__submit--locked:hover,
+.add-item__submit--locked:focus,
+.add-item__submit--locked:active {
+  color: $text-gray;
+  background: $bg-light-gray;
+  box-shadow: none;
+
+  animation: shake 0.5s;
+}
+
+@media screen and (max-width: 768px) {
+  .add-item {
+    position: initial;
+  }
+}

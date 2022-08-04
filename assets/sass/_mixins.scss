@@ -1,0 +1,13 @@
+@mixin white-round-shadow-block {
+  width: max-content;
+  height: max-content;
+  background: $bg-white;
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.04),
+    0px 6px 10px rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+}
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

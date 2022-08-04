@@ -1,0 +1,73 @@
+.item-card {
+  @include white-round-shadow-block;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  flex-grow: 1;
+  width: 320px;
+  height: auto;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    & .item-card__delete {
+      display: flex;
+    }
+  }
+}
+
+.item-card__delete {
+  position: absolute;
+  right: -8px;
+  top: -8px;
+  display: none;
+  width: 32px;
+  height: 32px;
+  outline: none;
+  background: url('../assets/img/delete.svg') center no-repeat $red;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    display: flex;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  }
+  animation: fade 0.25s ease-in-out;
+}
+
+.item-card__image {
+  display: flex;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 4px 4px 0 0;
+}
+
+.item-card__heading {
+  display: flex;
+  padding: 16px 16px 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  color: $text-black;
+}
+
+.item-card__description {
+  display: flex;
+  padding: 16px 16px 0;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: $text-black;
+}
+
+.item-card__price {
+  display: flex;
+  margin: auto 0 0;
+  padding: 16px 16px 24px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: $text-black;
+}
